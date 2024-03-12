@@ -1,0 +1,22 @@
+<div>
+    <div class="submit-form">
+        @if(!submitted){
+            <div class="form-group">
+                <label for ="nom">Nom_Client</label>
+                <input type="text" class="form-control" id="nom" required[(ngModel)]="client.nom" name="nom"/>
+            </div>
+            <div class="form-group">
+                <label for ="fonction">Fonction_Client</label>
+                <input type="text" class="form-control" id="fonction" required[(ngModel)]="client.fonction" name="fonction"/>
+            </div>
+            <div class="form-group">
+                <label for ="salaire">Salaire_Client</label>
+                <input type="text" class="form-control" id="salaire" required[(ngModel)]="client.salaire" name="salaire"/>
+            </div>
+            <button (click)="saveClient()" class="btn-btn-success">Enregistrer</button>
+        } @else {
+               <h4>Le Client est enregistré correctement !</h4>
+               <button class="btn-btn-success" (click)="newClient()">Ajouter</button>
+        } 
+    </div>
+</div>

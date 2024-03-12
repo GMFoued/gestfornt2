@@ -1,0 +1,30 @@
+<div class="list-now">
+    <div class="col-md-8">
+        <div class="input-group-mb-3">
+            <input type="text" class="form-control" placeholder="Recherche par Nom" [(ngModel)]="nom"/>
+            <div class="input-group-append">
+                <button class="btn-btn-outline-secondary" type="button" (click)="searchNom()">Recherche</button>
+
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Liste Clients</h4>
+            <ul class="list-group">
+                @for(client of clients; track client.id;let i = $index){
+                    <li class="list-group-item"  [class.active]="i == currentIndex" (click) ="setActiveClient(client,i)">
+                    {{client.nom}}
+                    </li>
+                }
+            </ul>
+            <ul class="list-group">
+                @for(client of clients; track client.id;let i = $index){
+                    <li class="list-group-item"  [class.active]="i == currentIndex" (click) ="setActiveClient(client, i)">
+                    {{client.fonction}}
+                    </li>
+                }
+            </ul>
+            <button class="m-3 btn btn-sm btn-danger" (click)="removeAllClients()">Supprimer_Tous</button>
+        </div>
+    </div>
+</div>
